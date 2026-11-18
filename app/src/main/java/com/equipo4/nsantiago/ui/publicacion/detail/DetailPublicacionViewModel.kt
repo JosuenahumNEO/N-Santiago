@@ -18,8 +18,7 @@ import com.equipo4.nsantiago.R
 
 class DetailPublicacionViewModel(application: Application) : AndroidViewModel(application) {
 
-    private val repository: PropiedadRepository =
-        com.equipo4.nsantiago.data.repository.PublicacionRepositoryApi(application)
+    private val repository: PropiedadRepository = Repositories.propiedades
 
     private val _uiState = MutableStateFlow<DetailPublicacionUiState>(DetailPublicacionUiState.Loading)
     val uiState: StateFlow<DetailPublicacionUiState> = _uiState.asStateFlow()

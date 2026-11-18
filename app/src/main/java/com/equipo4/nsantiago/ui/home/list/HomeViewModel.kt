@@ -18,8 +18,7 @@ import kotlinx.coroutines.launch
 
 class HomeViewModel(application: Application) : AndroidViewModel(application) {
 
-    private val repository: PropiedadRepository =
-        com.equipo4.nsantiago.data.repository.PublicacionRepositoryApi(application)
+    private val repository: PropiedadRepository = Repositories.propiedades
 
     private val _uiState = MutableStateFlow(HomeUiState())
     val uiState: StateFlow<HomeUiState> = _uiState.asStateFlow()

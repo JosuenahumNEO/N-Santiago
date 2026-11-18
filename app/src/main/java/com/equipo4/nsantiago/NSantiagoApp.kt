@@ -96,10 +96,20 @@ fun NSantiagoApp() {
     val navController = rememberNavController()
     val context = LocalContext.current
     val sessionManager = remember { SessionManager(context) }
+    remember {
+        sessionManager.saveSession(
+            token = "sesion-simulada",
+            userId = 1,
+            nombre = "Usuario N'Santiago",
+            rol = "VENDEDOR",
+            correo = "usuario@nsantiago.demo"
+        )
+        true
+    }
 
     NavHost(
         navController = navController,
-        startDestination = AppRoutes.VISITOR
+        startDestination = AppRoutes.HOME
     ) {
         composable(AppRoutes.VISITOR) {
             VisitorScreen(onIngresar = { navController.navigate(AppRoutes.LOGIN) })

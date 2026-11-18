@@ -11,8 +11,7 @@ data class LoginUiState(
     val isSuccess: Boolean = false,
     val googleSuccessMessage: String? = null
 ) {
-    // El botón Entrar solo se activa si el correo tiene formato válido,
-    // la contraseña no está vacía y no se está ejecutando la petición (isLoading)
+    // Modo demostración: el acceso no requiere validar credenciales reales.
     val isFormValid: Boolean
-        get() = isEmailValid && isPasswordValid && !isLoading
+        get() = !isLoading
 }
